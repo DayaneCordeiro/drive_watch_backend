@@ -8,6 +8,8 @@ import com.example.drivewatch.dataprovider.database.repository.CompanyRepository
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class CompanyGatewayImpl implements CompanyGateway {
@@ -21,5 +23,10 @@ public class CompanyGatewayImpl implements CompanyGateway {
         Company entity = mapper.toEntity(companyDomain);
 
         return mapper.toDomain(repository.save(entity));
+    }
+
+    @Override
+    public List<CompanyDomain> getAll() {
+        return mapper.toDomain((List<Company>) repository.findAll());
     }
 }

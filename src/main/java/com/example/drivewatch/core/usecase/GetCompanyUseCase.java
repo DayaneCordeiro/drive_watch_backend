@@ -1,4 +1,4 @@
-package com.example.drivewatch.core.usecase.impl;
+package com.example.drivewatch.core.usecase;
 
 import com.example.drivewatch.core.domain.CompanyDomain;
 

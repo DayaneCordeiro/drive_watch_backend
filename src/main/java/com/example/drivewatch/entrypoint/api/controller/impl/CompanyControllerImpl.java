@@ -28,11 +28,13 @@ public class CompanyControllerImpl implements CompanyController {
 
     @Override
     public CompanyDTO get(String id) {
-        return facade.get(id);
+//        return facade.get(id);
+        return null;
     }
 
     @Override
     public CompanyDTO update(String id, CompanyRequestDTO companyRequestDTO) {
-        return facade.update(id, companyRequestDTO);
+//        return facade.update(id, companyRequestDTO);
+        return null;
     }
 }
