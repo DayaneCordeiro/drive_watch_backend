@@ -2,6 +2,9 @@ package com.example.drivewatch.entrypoint.api.facade;
 
 import com.example.drivewatch.core.domain.CompanyDomain;
 import com.example.drivewatch.core.usecase.CreateCompanyUseCase;
+import com.example.drivewatch.core.usecase.GetAllCompaniesUseCase;
+import com.example.drivewatch.core.usecase.UpdateCompanyUseCase;
+import com.example.drivewatch.core.usecase.impl.GetCompanyUseCase;
 import com.example.drivewatch.entrypoint.api.dto.CompanyDTO;
 import com.example.drivewatch.entrypoint.api.dto.CompanyRequestDTO;
 import com.example.drivewatch.entrypoint.api.mapper.CompanyMapper;
@@ -18,6 +21,12 @@ public class CompanyFacade {
 
     private final CreateCompanyUseCase createCompanyUseCase;
 
+    private final GetAllCompaniesUseCase getAllCompaniesUseCase;
+
+    private final GetCompanyUseCase getCompanyUseCase;
+
+    private final UpdateCompanyUseCase updateCompanyUseCase;
+
     public CompanyDTO create(CompanyRequestDTO companyDTO) {
         CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
 
@@ -25,14 +34,16 @@ public class CompanyFacade {
     }
 
     public List<CompanyDTO> getAll() {
-        return null;
+        return companyMapper.toDto(getAllCompaniesUseCase.getAll());
     }
 
     public CompanyDTO get(String id) {
-        return null;
+        return companyMapper.toDto(getCompanyUseCase.get(id));
     }
 
     public CompanyDTO update(String id, CompanyRequestDTO companyDTO) {
-        return null;
+        CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
+
+        return companyMapper.toDto(updateCompanyUseCase.update(id, companyDomain));
     }
 }
