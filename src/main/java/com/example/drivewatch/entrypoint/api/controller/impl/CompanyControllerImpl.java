@@ -28,8 +28,7 @@ public class CompanyControllerImpl implements CompanyController {
 
     @Override
     public CompanyDTO get(String id) {
-//        return facade.get(id);
-        return null;
+        return facade.get(id);
     }
 
     @Override

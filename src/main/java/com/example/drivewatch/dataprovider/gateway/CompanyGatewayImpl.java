@@ -29,4 +29,9 @@ public class CompanyGatewayImpl implements CompanyGateway {
     public List<CompanyDomain> getAll() {
         return mapper.toDomain((List<Company>) repository.findAll());
     }
+
+    @Override
+    public CompanyDomain get(String id) {
+        return mapper.toDomain(repository.findById(id).orElse(null));
+    }
 }

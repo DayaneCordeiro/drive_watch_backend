@@ -9,4 +9,6 @@ public interface CompanyGateway {
     CompanyDomain create(CompanyDomain companyDomain);
 
     List<CompanyDomain> getAll();
+
+    CompanyDomain get(String id);
 }

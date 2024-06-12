@@ -23,8 +23,8 @@ public class CompanyFacade {
 
     private final GetAllCompaniesUseCase getAllCompaniesUseCase;
 
-//    private final GetCompanyUseCase getCompanyUseCase;
-//
+    private final GetCompanyUseCase getCompanyUseCase;
+
 //    private final UpdateCompanyUseCase updateCompanyUseCase;
 
     public CompanyDTO create(CompanyRequestDTO companyDTO) {
@@ -37,10 +37,10 @@ public class CompanyFacade {
         return companyMapper.toDto(getAllCompaniesUseCase.getAll());
     }
 
-//    public CompanyDTO get(String id) {
-//        return companyMapper.toDto(getCompanyUseCase.get(id));
-//    }
-//
+    public CompanyDTO get(String id) {
+        return companyMapper.toDto(getCompanyUseCase.get(id));
+    }
+
 //    public CompanyDTO update(String id, CompanyRequestDTO companyDTO) {
 //        CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
 //
