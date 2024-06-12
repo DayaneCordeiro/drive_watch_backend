@@ -23,16 +23,16 @@ public class CompanyControllerImpl implements CompanyController {
 
     @Override
     public List<CompanyDTO> getAll() {
-        return null;
+        return facade.getAll();
     }
 
     @Override
     public CompanyDTO get(String id) {
-        return null;
+        return facade.get(id);
     }
 
     @Override
     public CompanyDTO update(String id, CompanyRequestDTO companyRequestDTO) {
-        return null;
+        return facade.update(id, companyRequestDTO);
     }
 }

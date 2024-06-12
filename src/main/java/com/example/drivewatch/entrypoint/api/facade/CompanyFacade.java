@@ -8,6 +8,8 @@ import com.example.drivewatch.entrypoint.api.mapper.CompanyMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class CompanyFacade {
@@ -20,5 +22,17 @@ public class CompanyFacade {
         CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
 
         return companyMapper.toDto(createCompanyUseCase.create(companyDomain));
+    }
+
+    public List<CompanyDTO> getAll() {
+        return null;
+    }
+
+    public CompanyDTO get(String id) {
+        return null;
+    }
+
+    public CompanyDTO update(String id, CompanyRequestDTO companyDTO) {
+        return null;
     }
 }
