@@ -7,6 +7,8 @@ import com.example.drivewatch.entrypoint.api.facade.CompanyFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class CompanyControllerImpl implements CompanyController {
@@ -17,5 +19,20 @@ public class CompanyControllerImpl implements CompanyController {
     public CompanyDTO create(CompanyRequestDTO companyRequestDTO) {
 
         return facade.create(companyRequestDTO);
+    }
+
+    @Override
+    public List<CompanyDTO> getAll() {
+        return null;
+    }
+
+    @Override
+    public CompanyDTO get(String id) {
+        return null;
+    }
+
+    @Override
+    public CompanyDTO update(String id, CompanyRequestDTO companyRequestDTO) {
+        return null;
     }
 }
