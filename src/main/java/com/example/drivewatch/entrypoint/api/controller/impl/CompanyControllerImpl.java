@@ -33,7 +33,6 @@ public class CompanyControllerImpl implements CompanyController {
 
     @Override
     public CompanyDTO update(String id, CompanyRequestDTO companyRequestDTO) {
-//        return facade.update(id, companyRequestDTO);
-        return null;
+        return facade.update(id, companyRequestDTO);
     }
 }

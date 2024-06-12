@@ -34,4 +34,11 @@ public class CompanyGatewayImpl implements CompanyGateway {
     public CompanyDomain get(String id) {
         return mapper.toDomain(repository.findById(id).orElse(null));
     }
+
+    @Override
+    public CompanyDomain update(CompanyDomain companyDomain) {
+        Company entity = mapper.toEntity(companyDomain);
+
+        return mapper.toDomain(repository.save(entity));
+    }
 }

@@ -11,4 +11,6 @@ public interface CompanyGateway {
     List<CompanyDomain> getAll();
 
     CompanyDomain get(String id);
+
+    CompanyDomain update(CompanyDomain companyDomain);
 }

@@ -25,7 +25,7 @@ public class CompanyFacade {
 
     private final GetCompanyUseCase getCompanyUseCase;
 
-//    private final UpdateCompanyUseCase updateCompanyUseCase;
+    private final UpdateCompanyUseCase updateCompanyUseCase;
 
     public CompanyDTO create(CompanyRequestDTO companyDTO) {
         CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
@@ -41,9 +41,9 @@ public class CompanyFacade {
         return companyMapper.toDto(getCompanyUseCase.get(id));
     }
 
-//    public CompanyDTO update(String id, CompanyRequestDTO companyDTO) {
-//        CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
-//
-//        return companyMapper.toDto(updateCompanyUseCase.update(id, companyDomain));
-//    }
+    public CompanyDTO update(String id, CompanyRequestDTO companyDTO) {
+        CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
+
+        return companyMapper.toDto(updateCompanyUseCase.update(id, companyDomain));
+    }
 }
