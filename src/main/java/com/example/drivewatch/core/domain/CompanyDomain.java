@@ -6,7 +6,7 @@ import lombok.Builder;
 public record CompanyDomain(
     Integer id,
     String name,
-    String phoneNumber,
-    String address
+    String email,
+    String contract
 ) {
 }

@@ -15,6 +15,6 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    private String phoneNumber;
-    private String address;
+    private String email;
+    private String contract;
 }

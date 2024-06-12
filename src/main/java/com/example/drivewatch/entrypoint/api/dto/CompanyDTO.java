@@ -7,7 +7,7 @@ import lombok.Builder;
 public record CompanyDTO(
     Integer id,
     String name,
-    String phoneNumber,
-    String address
+    String email,
+    String contract
 ) {
 }

@@ -16,7 +16,7 @@ public class CompanyFacade {
 
     private final CreateCompanyUseCase createCompanyUseCase;
 
-    public CompanyDTO create(String userId, CompanyRequestDTO companyDTO) {
+    public CompanyDTO create(CompanyRequestDTO companyDTO) {
         CompanyDomain companyDomain = companyMapper.toDomain(companyDTO);
 
         return companyMapper.toDto(createCompanyUseCase.create(companyDomain));

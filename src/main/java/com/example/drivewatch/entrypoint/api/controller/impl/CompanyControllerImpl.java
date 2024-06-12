@@ -14,8 +14,8 @@ public class CompanyControllerImpl implements CompanyController {
     private final CompanyFacade facade;
 
     @Override
-    public CompanyDTO create(String userId, CompanyRequestDTO companyRequestDTO) {
+    public CompanyDTO create(CompanyRequestDTO companyRequestDTO) {
 
-        return facade.create(userId, companyRequestDTO);
+        return facade.create(companyRequestDTO);
     }
 }
