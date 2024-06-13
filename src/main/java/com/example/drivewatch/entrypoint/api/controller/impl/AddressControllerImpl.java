@@ -15,21 +15,25 @@ public class AddressControllerImpl implements AddressController {
 
     @Override
     public AddressResponseDTO create(AddressRequestDTO addressRequestDTO) {
+
         return facade.create(addressRequestDTO);
     }
 
     @Override
     public AddressResponseDTO getByCompanyId(String idCompany) {
+
         return facade.getByCompanyId(idCompany);
     }
 
     @Override
     public AddressResponseDTO get(String id) {
-        return null;
+
+        return facade.get(id);
     }
 
     @Override
     public AddressResponseDTO update(String id, AddressRequestDTO addressRequestDTO) {
-        return null;
+
+        return facade.update(id, addressRequestDTO);
     }
 }

@@ -7,4 +7,8 @@ public interface AddressGateway {
     AddressDomain create(AddressDomain addressDomain);
 
     AddressDomain getByCompanyId(String id);
+
+    AddressDomain get(String id);
+
+    AddressDomain update(AddressDomain addressDomain);
 }

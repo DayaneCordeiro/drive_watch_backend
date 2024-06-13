@@ -27,4 +27,16 @@ public class AddressGatewayImpl implements AddressGateway {
     public AddressDomain getByCompanyId(String id) {
         return mapper.toDomain(repository.findByIdCompany(Integer.parseInt(id)));
     }
+
+    @Override
+    public AddressDomain get(String id) {
+        return mapper.toDomain(repository.findById(id).orElse(null));
+    }
+
+    @Override
+    public AddressDomain update(AddressDomain addressDomain) {
+        Address address = mapper.toEntity(addressDomain);
+
+        return mapper.toDomain(repository.save(address));
+    }
 }
