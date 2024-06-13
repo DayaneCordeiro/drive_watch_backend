@@ -2,7 +2,9 @@ package com.example.drivewatch.core.usecase;
 
 import com.example.drivewatch.core.domain.RegisterDomain;
 
-public interface GetRegisterUseCase {
+import java.util.List;
 
-    RegisterDomain get(String id);
+public interface GetAllRegistersUseCase {
+
+    List<RegisterDomain> getAll();
 }

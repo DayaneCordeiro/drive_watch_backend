@@ -45,4 +45,6 @@ public interface EntityMapper {
     Register toEntity(RegisterDomain registerDomain);
 
     RegisterDomain toDomain(Register register);
+
+    List<RegisterDomain> toRegisterDomain(List<Register> registers);
 }

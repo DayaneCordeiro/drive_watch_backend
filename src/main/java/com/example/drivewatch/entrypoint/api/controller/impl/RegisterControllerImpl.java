@@ -7,6 +7,8 @@ import com.example.drivewatch.entrypoint.api.facade.RegisterFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class RegisterControllerImpl implements RegisterController {
@@ -15,12 +17,31 @@ public class RegisterControllerImpl implements RegisterController {
 
     @Override
     public RegisterResponseDTO create(RegisterRequestDTO requestDTO) {
+
         return facade.create(requestDTO);
     }
 
     @Override
-    public RegisterResponseDTO get() {
+    public RegisterResponseDTO get(String id) {
 
-        return facade.get();
+        return facade.get(id);
+    }
+
+    @Override
+    public List<RegisterResponseDTO> getAllByIdDevice(String id) {
+
+        return facade.getAllByDeviceId(id);
+    }
+
+    @Override
+    public List<RegisterResponseDTO> getAll() {
+
+        return facade.getAll();
+    }
+
+    @Override
+    public RegisterResponseDTO update(String id, RegisterRequestDTO requestDTO) {
+
+        return facade.update(id, requestDTO);
     }
 }

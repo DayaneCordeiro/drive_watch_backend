@@ -8,6 +8,8 @@ import com.example.drivewatch.dataprovider.database.repository.RegisterRepositor
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class RegisterGatewayImpl implements RegisterGateway {
@@ -24,8 +26,27 @@ public class RegisterGatewayImpl implements RegisterGateway {
     }
 
     @Override
-    public RegisterDomain get() {
-        String test = "3";
-        return null;
+    public RegisterDomain get(String id) {
+
+        return mapper.toDomain(repository.findById(id).orElse(null));
+    }
+
+    @Override
+    public List<RegisterDomain> getAll() {
+
+        return mapper.toRegisterDomain((List<Register>) repository.findAll());
+    }
+
+    @Override
+    public List<RegisterDomain> getAllByIdDevice(String id) {
+
+        return mapper.toRegisterDomain(repository.findAllByIdDevice(Integer.parseInt(id)));
+    }
+
+    @Override
+    public RegisterDomain update(RegisterDomain registerDomain) {
+        Register register = mapper.toEntity(registerDomain);
+
+        return mapper.toDomain(repository.save(register));
     }
 }
