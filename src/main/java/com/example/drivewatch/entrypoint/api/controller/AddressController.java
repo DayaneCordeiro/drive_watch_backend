@@ -22,7 +22,7 @@ public interface AddressController {
         @Valid @RequestBody final AddressRequestDTO addressRequestDTO
     );
 
-    @GetMapping("/{idCompany}")
+    @GetMapping("/company/{idCompany}")
     @ResponseStatus(HttpStatus.OK)
     AddressResponseDTO getByCompanyId(
         @PathVariable @NotBlank final String idCompany

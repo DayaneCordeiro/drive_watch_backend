@@ -20,7 +20,7 @@ public class AddressControllerImpl implements AddressController {
 
     @Override
     public AddressResponseDTO getByCompanyId(String idCompany) {
-        return null;
+        return facade.getByCompanyId(idCompany);
     }
 
     @Override

@@ -2,19 +2,18 @@ package com.example.drivewatch.core.usecase.impl;
 
 import com.example.drivewatch.core.domain.AddressDomain;
 import com.example.drivewatch.core.gateway.AddressGateway;
-import com.example.drivewatch.core.usecase.CreateAddressUseCase;
+import com.example.drivewatch.core.usecase.GetAddressByCompanyIdUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class CreateAddressUseCaseImpl implements CreateAddressUseCase {
+public class GetAddressByCompanyIdUseCaseImpl implements GetAddressByCompanyIdUseCase {
 
     private final AddressGateway gateway;
 
     @Override
-    public AddressDomain create(AddressDomain addressDomain) {
-
-        return gateway.create(addressDomain);
+    public AddressDomain getByCompanyId(String id) {
+        return gateway.getByCompanyId(id);
     }
 }
