@@ -7,6 +7,8 @@ import com.example.drivewatch.entrypoint.api.facade.DeviceFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class DeviceControllerImpl implements DeviceController {
@@ -26,8 +28,9 @@ public class DeviceControllerImpl implements DeviceController {
     }
 
     @Override
-    public DeviceResponseDTO getAll() {
-        return null;
+    public List<DeviceResponseDTO> getAll() {
+
+        return facade.getAll();
     }
 
     @Override

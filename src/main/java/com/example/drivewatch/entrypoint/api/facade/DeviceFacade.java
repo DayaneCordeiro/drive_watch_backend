@@ -2,12 +2,15 @@ package com.example.drivewatch.entrypoint.api.facade;
 
 import com.example.drivewatch.core.domain.DeviceDomain;
 import com.example.drivewatch.core.usecase.CreateDeviceUseCase;
+import com.example.drivewatch.core.usecase.GetAllDevicesUseCase;
 import com.example.drivewatch.core.usecase.GetDeviceUseCase;
 import com.example.drivewatch.entrypoint.api.dto.DeviceRequestDTO;
 import com.example.drivewatch.entrypoint.api.dto.DeviceResponseDTO;
 import com.example.drivewatch.entrypoint.api.mapper.DeviceMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -19,6 +22,8 @@ public class DeviceFacade {
 
     private final GetDeviceUseCase getDeviceUseCase;
 
+    private final GetAllDevicesUseCase getAllDevicesUseCase;
+
     public DeviceResponseDTO create(DeviceRequestDTO requestDTO) {
         DeviceDomain deviceDomain = mapper.toDomain(requestDTO);
 
@@ -27,5 +32,9 @@ public class DeviceFacade {
 
     public DeviceResponseDTO get(String id) {
         return mapper.toDto(getDeviceUseCase.get(id));
+    }
+
+    public List<DeviceResponseDTO> getAll() {
+        return mapper.toDto(getAllDevicesUseCase.getAll());
     }
 }

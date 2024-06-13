@@ -36,6 +36,8 @@ public interface EntityMapper {
 
     DeviceDomain toDomain(Device device);
 
+    List<DeviceDomain> toDeviceDomain(List<Device> devices);
+
     Phone toEntity(PhoneDomain phoneDomain);
 
     PhoneDomain toDomain(Phone phone);

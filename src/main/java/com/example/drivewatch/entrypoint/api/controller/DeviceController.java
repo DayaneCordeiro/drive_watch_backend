@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.List;
+
 @RequestMapping("/api/v1/device")
 public interface DeviceController {
 
@@ -30,7 +32,7 @@ public interface DeviceController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    DeviceResponseDTO getAll();
+    List<DeviceResponseDTO> getAll();
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
