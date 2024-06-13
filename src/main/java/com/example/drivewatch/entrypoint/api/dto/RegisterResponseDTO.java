@@ -1,11 +1,11 @@
-package com.example.drivewatch.core.domain;
+package com.example.drivewatch.entrypoint.api.dto;
 
 import lombok.Builder;
 
 import java.time.LocalDate;
 
 @Builder
-public record RegisterDomain(
+public record RegisterResponseDTO(
     String id,
     String idDevice,
     String type,

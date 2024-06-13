@@ -1,10 +1,8 @@
-package com.example.drivewatch.core.gateway;
+package com.example.drivewatch.core.usecase;
 
 import com.example.drivewatch.core.domain.RegisterDomain;
 
-public interface RegisterGateway {
+public interface CreateRegisterUseCase {
 
     RegisterDomain create(RegisterDomain registerDomain);
-
-    RegisterDomain get();
 }
