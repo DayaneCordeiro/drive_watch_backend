@@ -15,6 +15,25 @@ public class PhoneControllerImpl implements PhoneController {
 
     @Override
     public PhoneResponseDTO create(PhoneRequestDTO requestDTO) {
+
         return facade.create(requestDTO);
+    }
+
+    @Override
+    public PhoneResponseDTO get(String id) {
+
+        return facade.get(id);
+    }
+
+    @Override
+    public PhoneResponseDTO getByIdDevice(String id) {
+
+        return facade.getByIdDevice(id);
+    }
+
+    @Override
+    public PhoneResponseDTO update(String id, PhoneRequestDTO requestDTO) {
+
+        return facade.update(id, requestDTO);
     }
 }

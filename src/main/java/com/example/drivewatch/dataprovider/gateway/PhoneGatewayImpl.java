@@ -22,4 +22,21 @@ public class PhoneGatewayImpl implements PhoneGateway {
 
         return mapper.toDomain(repository.save(phone));
     }
+
+    @Override
+    public PhoneDomain get(String id) {
+        return mapper.toDomain(repository.findById(id).orElse(null));
+    }
+
+    @Override
+    public PhoneDomain getByDeviceId(String id) {
+        return mapper.toDomain(repository.findByIdDevice(Integer.parseInt(id)));
+    }
+
+    @Override
+    public PhoneDomain update(PhoneDomain phoneDomain) {
+        Phone phone = mapper.toEntity(phoneDomain);
+
+        return mapper.toDomain(repository.save(phone));
+    }
 }
