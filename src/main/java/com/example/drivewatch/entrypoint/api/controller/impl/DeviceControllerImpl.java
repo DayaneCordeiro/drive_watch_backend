@@ -15,6 +15,23 @@ public class DeviceControllerImpl implements DeviceController {
 
     @Override
     public DeviceResponseDTO create(DeviceRequestDTO deviceRequestDTO) {
+
         return facade.create(deviceRequestDTO);
+    }
+
+    @Override
+    public DeviceResponseDTO get(String id) {
+
+        return facade.get(id);
+    }
+
+    @Override
+    public DeviceResponseDTO getAll() {
+        return null;
+    }
+
+    @Override
+    public DeviceResponseDTO update(String id, DeviceRequestDTO deviceRequestDTO) {
+        return null;
     }
 }

@@ -22,4 +22,9 @@ public class DeviceGatewayImpl implements DeviceGateway {
 
         return mapper.toDomain(repository.save(device));
     }
+
+    @Override
+    public DeviceDomain get(String id) {
+        return mapper.toDomain(repository.findById(id).orElse(null));
+    }
 }
