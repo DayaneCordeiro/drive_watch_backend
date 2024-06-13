@@ -34,4 +34,11 @@ public class DeviceGatewayImpl implements DeviceGateway {
     public List<DeviceDomain> getAll() {
         return mapper.toDeviceDomain((List<Device>) repository.findAll());
     }
+
+    @Override
+    public DeviceDomain update(DeviceDomain deviceDomain) {
+        Device device = mapper.toEntity(deviceDomain);
+
+        return mapper.toDomain(repository.save(device));
+    }
 }

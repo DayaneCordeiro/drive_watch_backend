@@ -4,6 +4,7 @@ import com.example.drivewatch.core.domain.DeviceDomain;
 import com.example.drivewatch.core.usecase.CreateDeviceUseCase;
 import com.example.drivewatch.core.usecase.GetAllDevicesUseCase;
 import com.example.drivewatch.core.usecase.GetDeviceUseCase;
+import com.example.drivewatch.core.usecase.UpdateDeviceUseCase;
 import com.example.drivewatch.entrypoint.api.dto.DeviceRequestDTO;
 import com.example.drivewatch.entrypoint.api.dto.DeviceResponseDTO;
 import com.example.drivewatch.entrypoint.api.mapper.DeviceMapper;
@@ -24,6 +25,8 @@ public class DeviceFacade {
 
     private final GetAllDevicesUseCase getAllDevicesUseCase;
 
+    private final UpdateDeviceUseCase updateDeviceUseCase;
+
     public DeviceResponseDTO create(DeviceRequestDTO requestDTO) {
         DeviceDomain deviceDomain = mapper.toDomain(requestDTO);
 
@@ -36,5 +39,11 @@ public class DeviceFacade {
 
     public List<DeviceResponseDTO> getAll() {
         return mapper.toDto(getAllDevicesUseCase.getAll());
+    }
+
+    public DeviceResponseDTO update(String id, DeviceRequestDTO requestDTO) {
+        DeviceDomain deviceDomain = mapper.toDomain(requestDTO);
+
+        return mapper.toDto(updateDeviceUseCase.update(id, deviceDomain));
     }
 }

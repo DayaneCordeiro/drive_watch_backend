@@ -35,6 +35,6 @@ public class DeviceControllerImpl implements DeviceController {
 
     @Override
     public DeviceResponseDTO update(String id, DeviceRequestDTO deviceRequestDTO) {
-        return null;
+        return facade.update(id, deviceRequestDTO);
     }
 }

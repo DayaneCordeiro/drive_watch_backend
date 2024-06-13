@@ -11,4 +11,6 @@ public interface DeviceGateway {
     DeviceDomain get(String id);
 
     List<DeviceDomain> getAll();
+
+    DeviceDomain update(DeviceDomain deviceDomain);
 }
