@@ -2,7 +2,7 @@ package com.example.drivewatch.entrypoint.api.dto;
 
 import lombok.Builder;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Builder
 public record RegisterResponseDTO(
@@ -10,6 +10,6 @@ public record RegisterResponseDTO(
     String idDevice,
     String type,
     String image,
-    LocalDate occurrenceDate
+    LocalDateTime occurrenceDate
 ) {
 }

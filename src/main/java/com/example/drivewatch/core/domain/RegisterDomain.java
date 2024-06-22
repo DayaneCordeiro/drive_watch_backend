@@ -2,7 +2,7 @@ package com.example.drivewatch.core.domain;
 
 import lombok.Builder;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Builder
 public record RegisterDomain(
@@ -10,6 +10,6 @@ public record RegisterDomain(
     String idDevice,
     String type,
     String image,
-    LocalDate occurrenceDate
+    LocalDateTime occurrenceDate
 ) {
 }

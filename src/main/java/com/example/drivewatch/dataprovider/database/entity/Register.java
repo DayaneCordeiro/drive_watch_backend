@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -19,5 +19,5 @@ public class Register {
     private Integer idDevice;
     private String image;
     private String type;
-    private LocalDate occurrenceDate;
+    private LocalDateTime occurrenceDate;
 }
