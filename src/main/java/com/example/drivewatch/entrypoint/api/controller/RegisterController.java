@@ -5,6 +5,7 @@ import com.example.drivewatch.entrypoint.api.dto.RegisterResponseDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,18 +21,21 @@ public interface RegisterController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     RegisterResponseDTO create(
         @Valid @RequestBody final RegisterRequestDTO requestDTO
     );
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     RegisterResponseDTO get(
         @PathVariable @NotBlank final String id
     );
 
     @GetMapping("/device/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     List<RegisterResponseDTO> getAllByIdDevice(
         @PathVariable @NotBlank final String id
     );
@@ -42,6 +46,7 @@ public interface RegisterController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     RegisterResponseDTO update(
         @PathVariable @NotBlank final String id,
         @Valid @RequestBody final RegisterRequestDTO requestDTO
