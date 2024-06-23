@@ -42,6 +42,7 @@ public interface RegisterController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     List<RegisterResponseDTO> getAll();
 
     @PutMapping("/{id}")
